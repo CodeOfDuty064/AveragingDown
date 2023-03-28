@@ -16,19 +16,35 @@ import { CheckIcon } from "@chakra-ui/icons";
 import { inherits } from "@babel/types";
 export default function Calculator() {
   // 코인 물타기 계산기 Component
-  const [unitAmountValue, setUnitAmountValue] = useState("");
-  const [unitPriceValue, setUnitPriceValue] = useState("");
-  const [unitTotalValue, setUnitTotalValue] = useState("");
+  const [unitAmountValue, setUnitAmountValue] = useState(""); // 보유평단
+  const [unitPriceValue, setUnitPriceValue] = useState(""); // 보유수량
+  const [unitTotalValue, setUnitTotalValue] = useState(""); // 보유총액
+  const [addAmountValue, setAddAmountValue] = useState(""); // 추가평단
+  const [addPriceValue, setAddPriceValue] = useState(""); // 추가수량
+  const [addTotalValue, setAddTotalValue] = useState(""); // 추가총액
   const { colorMode, toggleColorMode } = useColorMode();
 
+  // 보유 평단
   const checkUnitPrice = async (event) => {
     setUnitPriceValue(event.target.value);
   };
 
+  // 보유수량
   const checkUnitAmount = async (event) => {
     setUnitAmountValue(event.target.value);
   };
 
+  // 추가 가격
+  const checkAddPrice = async (event) => {
+    setAddPriceValue(event.target.value);
+  };
+
+  // 추가 수량
+  const checkAddAmount = async (event) => {
+    setAddAmountValue(event.target.value);
+  };
+
+  // Unit section - 소유
   useEffect(() => {
     if (unitPriceValue !== "" || unitPriceValue !== undefined) {
       console.log(unitPriceValue);
@@ -42,6 +58,21 @@ export default function Calculator() {
       setUnitTotalValue(unitPriceValue * unitAmountValue);
     }
   }, [unitAmountValue, unitPriceValue]);
+
+  // Add section - 추가
+  useEffect(() => {
+    if (addAmountValue !== "" || addAmountValue !== undefined) {
+      console.log(addAmountValue);
+    }
+
+    if (addPriceValue !== "" || addPriceValue !== undefined) {
+      console.log(addPriceValue);
+    }
+
+    if (addAmountValue !== "" && addPriceValue !== "") {
+      setAddTotalValue(addAmountValue * addPriceValue);
+    }
+  }, [addAmountValue, addPriceValue]);
 
   return (
     <>
@@ -184,6 +215,8 @@ export default function Calculator() {
                   placeholder="0"
                   borderColor="#303134"
                   _placeholder={{ opacity: 0.6, color: "#fff" }}
+                  value={addPriceValue}
+                  onChange={checkAddPrice}
                 />
                 <InputRightElement children={<CheckIcon color="green.500" />} />
               </InputGroup>
@@ -204,6 +237,8 @@ export default function Calculator() {
                   placeholder="0"
                   borderColor="#303134"
                   _placeholder={{ opacity: 0.6, color: "#fff" }}
+                  value={addAmountValue}
+                  onChange={checkAddAmount}
                 />
                 <InputRightElement children={<CheckIcon color="green.500" />} />
               </InputGroup>
@@ -232,6 +267,7 @@ export default function Calculator() {
                   borderColor="#303134"
                   _placeholder={{ opacity: 0.6, color: "#fff" }}
                   readOnly
+                  value={addTotalValue}
                 />
                 <InputRightElement children={<CheckIcon color="green.500" />} />
               </InputGroup>
