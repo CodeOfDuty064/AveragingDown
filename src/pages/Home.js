@@ -2,6 +2,7 @@ import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 // components
 import Header from "../Components/Header"; // 헤더 Header
+import Footer from "../Components/Footer"; // 푸터 Footer
 import Calculator from "../Components/Calculator"; // 계산기 Componenet
 import Graph from "../Components/Graph"; // 사용자 평단 Before & After Component
 import Share from "../Components/Share"; // SNS Share Component
@@ -22,6 +23,7 @@ export default function Home() {
           <Share />
           <Chart /> */}
         </div>
+        <Footer />
       </div>
     </ChakraProvider>
   );
