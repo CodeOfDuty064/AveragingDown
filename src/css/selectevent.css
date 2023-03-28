@@ -1,0 +1,31 @@
+.select-wrap {
+  background-color: #303134;
+  border-radius: 0.75rem;
+}
+
+.select-wrap div {
+  border-radius: 0.75rem;
+  background-color: #303134;
+}
+
+.calculator-dark-box > div > div {
+  background-color: #1b1b1e;
+}
+
+.calculator-light-box > div > div {
+  background-color: #fff;
+}
+
+.select-light-wrap div {
+  border-color: rgba(209, 213, 219, 1) !important;
+  background-color: #fff;
+  height: 50%;
+  border-radius: 10px;
+}
+
+.select-dark-wrap div {
+  background-color: #303134;
+  height: 50%;
+  border-radius: 10px;
+  border-color: #303134;
+}
