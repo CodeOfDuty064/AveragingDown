@@ -22,6 +22,14 @@ export default function Calculator() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   const checkUnitPrice = async (event) => {
+    // console.log(
+    //   "보유 평단",
+    //   event.target.value,
+    //   "보유평단 타입",
+    //   isNaN(event.target.value)
+    // );
+    parseInt(event.target.value);
+    console.log("형 변환 후", isNaN(event.target.value));
     setUnitPriceValue(event.target.value);
   };
 
@@ -45,6 +53,16 @@ export default function Calculator() {
 
   return (
     <>
+      {/* 숫자만 입력하고 세자리 콤마찍는 input */}
+      {/* <input
+        type="text"
+        onInput={(e) =>
+          (e.target.value = e.target.value
+            .replace(/[^0-9]/g, "")
+            .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","))
+        }
+      /> */}
+
       <Grid
         h="700px"
         templateRows="repeat(2, 1fr)"
@@ -77,7 +95,6 @@ export default function Calculator() {
               {/* 보유 평단 Input */}
               <InputGroup>
                 <InputLeftElement
-                  type="number"
                   pointerEvents="none"
                   color="gray.300"
                   fontSize="1.2em"
@@ -91,12 +108,17 @@ export default function Calculator() {
                   }
                   bg={colorMode === "light" ? "#fff" : "#303134"}
                   color={colorMode === "light" ? "gray.500" : "gray.300"}
-                  type="number"
+                  type="text"
                   placeholder="0"
                   value={unitPriceValue}
                   onChange={checkUnitPrice}
                   borderColor="#303134"
                   _placeholder={{ opacity: 0.6, color: "#fff" }}
+                  onInput={(e) =>
+                    (e.target.value = e.target.value
+                      .replace(/[^0-9]/g, "")
+                      .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","))
+                  }
                 />
                 <InputRightElement children={<CheckIcon color="green.500" />} />
               </InputGroup>
@@ -113,12 +135,15 @@ export default function Calculator() {
                   }
                   bg={colorMode === "light" ? "#fff" : "#303134"}
                   color={colorMode === "light" ? "gray.500" : "gray.300"}
-                  type="number"
+                  type="text"
                   placeholder="0"
                   value={unitAmountValue}
                   onChange={checkUnitAmount}
                   borderColor="#303134"
                   _placeholder={{ opacity: 0.6, color: "#fff" }}
+                  onInput={(e) =>
+                    (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
+                  }
                 />
                 <InputRightElement children={<CheckIcon color="green.500" />} />
               </InputGroup>
@@ -147,6 +172,11 @@ export default function Calculator() {
                   value={unitTotalValue}
                   borderColor="#303134"
                   _placeholder={{ opacity: 0.6, color: "#fff" }}
+                  onInput={(e) =>
+                    (e.target.value = e.target.value
+                      .replace(/[^0-9]/g, "")
+                      .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","))
+                  }
                   readOnly
                 />
                 <InputRightElement children={<CheckIcon color="green.500" />} />
