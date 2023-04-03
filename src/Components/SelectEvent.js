@@ -6,13 +6,17 @@ import {
   Button,
   useColorMode,
   Tooltip,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
+import AddEvent from "./AddEvent"; // 종목 추가 Modal Component
 
 import "../css/selectevent.css";
 
 export default function Selected() {
+  // 종목선택 모달창
+  const { onOpen, isOpen, onClose } = useDisclosure();
   // 종목 선택 Select Box Component
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -53,7 +57,7 @@ export default function Selected() {
                 : { bg: "#1B1B1E", color: "gray.50" }
             }
           >
-            <FontAwesomeIcon className="fa-spin" icon={faGear} size="xl" />
+            <AddEvent />
           </Button>
         </Tooltip>
       </Flex>

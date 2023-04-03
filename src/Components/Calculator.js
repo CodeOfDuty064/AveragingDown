@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import SelectEvent from "./SelectEvent"; // 종목 선택 Select Box Component
-import AddEvent from "./AddEvent"; // 종목 추가 Modal Component
 // css
 import {
   Grid,
@@ -14,6 +13,7 @@ import {
 import "../css/calculator.css";
 import { CheckIcon } from "@chakra-ui/icons";
 import { inherits } from "@babel/types";
+
 export default function Calculator() {
   // 코인 물타기 계산기 Component
   const [unitAmountValue, setUnitAmountValue] = useState(""); // 보유평단
@@ -392,7 +392,6 @@ export default function Calculator() {
           bg={colorMode === "light" ? "#F9FAFB" : "#303134"}
         />
       </Grid>
-      {/* <AddEvent /> */}
     </>
   );
 }
