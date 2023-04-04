@@ -10,16 +10,13 @@ import {
   ModalBody,
   ModalCloseButton,
   Text,
+  Checkbox,
+  CheckboxGroup,
+  Stack,
   Flex,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGear,
-  faEarthAsia,
-  faEnvelope,
-  faLink,
-} from "@fortawesome/free-solid-svg-icons";
-import { faTelegram, faDiscord } from "@fortawesome/free-brands-svg-icons";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
 
 export default function AddEvent() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -42,26 +39,31 @@ export default function AddEvent() {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            <Flex alignItems="center">
-              <Text mr={2}>
-                <FontAwesomeIcon className="modal-title" icon={faEarthAsia} />
-              </Text>
-              <Text fontSize="md" as="b">
-                Share
-              </Text>
-            </Flex>
+            <Flex alignItems="center"></Flex>
           </ModalHeader>
-          <ModalCloseButton />
+          {/* <ModalCloseButton /> */}
           <ModalBody>
-            <div className="share-icon-wrap flex">
-              <FontAwesomeIcon icon={faLink} size="2x" />
-              <FontAwesomeIcon icon={faEnvelope} size="2x" />
-              <FontAwesomeIcon icon={faDiscord} size="2x" />
-              <FontAwesomeIcon icon={faTelegram} size="2x" />
+            <div className="flex">
+              <Stack spacing={5} direction="row">
+                <Checkbox colorScheme="red" defaultChecked>
+                  Checkbox
+                </Checkbox>
+              </Stack>
             </div>
           </ModalBody>
-          <ModalFooter>
+          <ModalFooter justifyContent="center">
+            <Button colorScheme="red" mr={3} onClick={onClose}>
+              Delete
+            </Button>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
+              Save
+            </Button>
+            <Button
+              colorScheme="blue"
+              variant="outline"
+              mr={3}
+              onClick={onClose}
+            >
               Close
             </Button>
             {/* 삭제 */}
