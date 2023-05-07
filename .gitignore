@@ -10,14 +10,29 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
 .env.local
+.env.development
 .env.development.local
 .env.test.local
 .env.production.local
+.env.production
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# package-lock.json
+package-lock.json
+
+# Zero-Installs 를 사용할 때
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
