@@ -9,7 +9,7 @@ import Share from "../Components/Share"; // SNS Share Component
 import Chart from "../Components/Chart"; // 메이저 종목 시세 Chart
 
 // css
-import "../css/reset.css"; // reset css UI 침해시 삭제
+// import "../css/reset.css"; // reset css UI 침해시 삭제
 import "../css/common.css";
 
 export default function Home() {

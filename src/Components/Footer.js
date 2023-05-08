@@ -44,7 +44,7 @@ export default function SmallWithSocial() {
       color={useColorModeValue("gray.700", "gray.200")}
       mt={10}
       padding={4}
-      className="container"
+      className="content-box"
     >
       <Container
         as={Stack}
