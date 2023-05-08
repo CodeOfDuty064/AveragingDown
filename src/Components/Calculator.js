@@ -95,11 +95,11 @@ export default function Calculator() {
       /> */}
 
       <Grid
-        h="700px"
+        h="auto"
         templateRows="repeat(2, 1fr)"
         templateColumns="repeat(5, 1fr)"
         gap={4}
-        marginTop="4rem"
+        marginTop="2rem"
         className="container"
       >
         <GridItem
@@ -115,8 +115,8 @@ export default function Calculator() {
         >
           <SelectEvent />
           <Grid
-            h="150px"
-            marginTop="1rem"
+            h="164px"
+            marginTop="2rem"
             templateRows="repeat(2, 1fr)"
             templateColumns="repeat(4, 1fr)"
             gap={4}
@@ -216,8 +216,8 @@ export default function Calculator() {
           </Grid>
 
           <Grid
-            h="150px"
-            marginTop="1rem"
+            h="164px"
+            marginTop="2rem"
             templateRows="repeat(2, 1fr)"
             templateColumns="repeat(4, 1fr)"
             gap={4}
@@ -304,8 +304,8 @@ export default function Calculator() {
             </GridItem>
           </Grid>
           <Grid
-            h="150px"
-            marginTop="1rem"
+            h="145px"
+            marginTop="2rem"
             templateRows="repeat(1, 1fr)"
             templateColumns="repeat(3, 1fr)"
             gap={1}
