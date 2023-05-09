@@ -23,7 +23,7 @@ export default function Calculator() {
   const [addPriceValue, setAddPriceValue] = useState(""); // 추가수량
   const [addTotalValue, setAddTotalValue] = useState(""); // 추가총액
   const { colorMode, toggleColorMode } = useColorMode();
-  //test push
+  //test push !!
 
   // 보유 평단
   const checkUnitPrice = async (event) => {
